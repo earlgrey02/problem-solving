@@ -1,15 +1,13 @@
 import sys
+from itertools import accumulate
 
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
 numbers = list(map(int, input().split()))
-dp = [0 for _ in range(n + 1)]
-
-for i in range(1, n + 1):
-    dp[i] = dp[i - 1] + numbers[i - 1]
+prefix_sum = [0, *accumulate(numbers)]
 
 for _ in range(m):
     i, j = map(int, input().split())
 
-    print(dp[j] - dp[i - 1])
+    print(prefix_sum[j] - prefix_sum[i - 1])
