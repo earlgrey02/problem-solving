@@ -20,9 +20,9 @@ def backtracking(depth: int):
                 squares[y // 3 + (x // 3) * 3] |= check
                 backtracking(depth + 1)
                 matrix[y][x] = 0
-                rows[y] -= check
-                columns[x] -= check
-                squares[y // 3 + (x // 3) * 3] -= check
+                rows[y] &= ~check
+                columns[x] &= ~check
+                squares[y // 3 + (x // 3) * 3] &= ~check
 
 matrix = [list(map(int, input().split())) for _ in range(9)]
 rows, columns, squares = ([0 for _ in range(9)] for _ in range(3))
