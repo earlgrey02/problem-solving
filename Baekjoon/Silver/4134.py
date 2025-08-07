@@ -1,9 +1,9 @@
-from math import sqrt, floor
 import sys
+from math import floor, sqrt
 
 input = sys.stdin.readline
 
-def is_prime(n):
+def is_prime(n) -> bool:
     if n <= 1:
         return False
 

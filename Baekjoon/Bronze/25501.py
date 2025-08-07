@@ -2,7 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
-def recursion(string: str, start: int, end: int):
+def recursion(string: str, start: int, end: int) -> int:
     counts[string] += 1
 
     if start >= end:
@@ -12,7 +12,7 @@ def recursion(string: str, start: int, end: int):
     else:
         return recursion(string, start + 1, end - 1)
 
-def isPalindrome(string: str):
+def isPalindrome(string: str) -> int:
     return recursion(string, 0, len(string) - 1)
 
 t = int(input())

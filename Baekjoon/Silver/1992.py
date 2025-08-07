@@ -2,7 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
-def compress(matrix: list[list[int]]):
+def compress(matrix: list[list[int]]) -> str:
     result = ""
 
     if all(i == (first := matrix[0][0]) for row in matrix for i in row):

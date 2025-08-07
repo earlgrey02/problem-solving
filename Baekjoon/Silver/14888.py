@@ -1,5 +1,5 @@
-from math import inf
 import sys
+from math import inf
 
 input = sys.stdin.readline
 

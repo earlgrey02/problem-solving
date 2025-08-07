@@ -3,7 +3,7 @@ import sys
 input = sys.stdin.readline
 sys.setrecursionlimit(10 ** 9)
 
-def dfs(v: tuple[int, int]):
+def dfs(v: tuple[int, int]) -> int:
     if v == (m - 1, n - 1):
         return 1
     else:
@@ -13,10 +13,7 @@ def dfs(v: tuple[int, int]):
             next_v = (v[0] + dy[i], v[1] + dx[i])
 
             if 0 <= next_v[0] < m and 0 <= next_v[1] < n and matrix[next_v[0]][next_v[1]] < matrix[v[0]][v[1]]:
-                if visited[next_v[0]][next_v[1]]:
-                    dp[v[0]][v[1]] += dp[next_v[0]][next_v[1]]
-                else:
-                    dp[v[0]][v[1]] += dfs(next_v)
+                dp[v[0]][v[1]] += dp[next_v[0]][next_v[1]] if visited[next_v[0]][next_v[1]] else dfs(next_v)
 
     return dp[v[0]][v[1]]
 

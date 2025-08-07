@@ -1,9 +1,9 @@
-from math import inf
 import sys
+from math import inf
 
 input = sys.stdin.readline
 
-def get_square_count(x_range: range, y_range: range):
+def get_square_count(x_range: range, y_range: range) -> int:
     first = {'B': 0, 'W': 0}
 
     for i in x_range:

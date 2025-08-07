@@ -2,7 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
-def draw_stars(n: int):
+def draw_stars(n: int) -> list[str]:
     if n == 1:
         return ['*']
     else:

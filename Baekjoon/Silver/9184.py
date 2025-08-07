@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 results = list()
 
-def w(a, b, c):
+def w(a, b, c) -> int:
     if a <= 0 or b <= 0 or c <= 0:
         return 1
     elif a > 20 or b > 20 or c > 20:
