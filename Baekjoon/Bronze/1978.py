@@ -1,5 +1,5 @@
-from math import sqrt, floor
 import sys
+from math import floor, sqrt
 
 input = sys.stdin.readline
 
