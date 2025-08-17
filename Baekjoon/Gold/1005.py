@@ -5,7 +5,7 @@ from math import inf
 input = sys.stdin.readline
 
 def topological_sort():
-    queue = deque([i for i in range(n) if indegrees[i] == 0])
+    queue = deque(i for i in range(n) if indegrees[i] == 0)
 
     while queue:
         v = queue.popleft()

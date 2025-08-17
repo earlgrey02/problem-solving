@@ -26,7 +26,8 @@ dx = (1, -1, 1, -1, 2, -2, 2, -2)
 
 for _ in range(t):
     l = int(input())
-    v, destination = [tuple(map(int, input().split())) for _ in range(2)]
+    v = tuple(map(int, input().split()))
+    destination = tuple(map(int, input().split()))
     visited = [[-1 for _ in range(l)] for _ in range(l)]
 
     print(bfs(v))
