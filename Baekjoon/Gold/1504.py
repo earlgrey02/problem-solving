@@ -4,8 +4,10 @@ from math import inf
 
 input = sys.stdin.readline
 
-def dijkstra(v: int):
-    heap = [(0, v)]
+def dijkstra(v: int) -> list[int | float]:
+    distances = [inf for _ in range(n + 1)]
+    heap = []
+    heapq.heappush(heap, (0, v))
     distances[v] = 0
 
     while heap:
@@ -21,15 +23,17 @@ def dijkstra(v: int):
                 distances[next_v] = next_w
                 heapq.heappush(heap, (next_w, next_v))
 
-v, e = map(int, input().split())
-k = int(input())
-adjacencies = [[] for _ in range(v + 1)]
-distances = [inf for _ in range(v + 1)]
+    return distances
+
+n, e = map(int, input().split())
+adjacencies = [[] for _ in range(n + 1)]
 
 for _ in range(e):
     v1, v2, w = map(int, input().split())
     adjacencies[v1].append((v2, w))
+    adjacencies[v2].append((v1, w))
 
-dijkstra(k)
+v1, v2 = map(int, input().split())
+answer = min(sum(dijkstra(i)[j] for i, j in zip(path, path[1:])) for path in ((1, v1, v2, n), (1, v2, v1, n)))
 
-print(*(distances[i] if distances[i] != inf else "INF" for i in range(1, v + 1)), sep = "\n")
+print(answer if answer != inf else -1)

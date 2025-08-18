@@ -4,7 +4,7 @@ from math import inf
 
 input = sys.stdin.readline
 
-def dijkstra(v):
+def dijkstra(v: int):
     heap = [(0, v)]
     distances[v] = 0
 
