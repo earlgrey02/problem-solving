@@ -1,5 +1,5 @@
-import heapq
 import sys
+from heapq import heappop, heappush
 from math import inf
 
 input = sys.stdin.readline
@@ -9,7 +9,7 @@ def dijkstra(v: int):
     distances[v] = 0
 
     while heap:
-        w, v = heapq.heappop(heap)
+        w, v = heappop(heap)
 
         if distances[v] < w:
             continue
@@ -19,7 +19,7 @@ def dijkstra(v: int):
 
             if next_w < distances[next_v]:
                 distances[next_v] = next_w
-                heapq.heappush(heap, (next_w, next_v))
+                heappush(heap, (next_w, next_v))
 
 v, e = map(int, input().split())
 k = int(input())
