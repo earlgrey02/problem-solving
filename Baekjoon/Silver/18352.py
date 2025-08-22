@@ -25,7 +25,7 @@ for _ in range(m):
 
 bfs(x)
 
-if len(nodes := [i for i in range(1, n + 1) if visited[i] == k]) == 0:
-    print(-1)
-else:
+if nodes := [i for i in range(1, n + 1) if visited[i] == k]:
     print(*nodes, sep = '\n')
+else:
+    print(-1)

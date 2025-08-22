@@ -4,7 +4,7 @@ input = sys.stdin.readline
 sys.setrecursionlimit(10 ** 6)
 
 def preorder_to_postorder(nodes: list[int]):
-    if len(nodes) == 0:
+    if not nodes:
         return
 
     root = nodes[0]

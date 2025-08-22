@@ -20,7 +20,7 @@ for _ in range(t):
         if i == 'R':
             reversed_count += 1
         else:
-            if len(array) == 0:
+            if not array:
                 is_error = True
                 break
             else:

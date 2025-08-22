@@ -6,7 +6,7 @@ def dfs(v: int) -> int:
     visited[v] = True
     count = 0
 
-    if len(adjacencies[v]) == 0:
+    if not adjacencies[v]:
         return 1
     else:
         for next_v in adjacencies[v]:
