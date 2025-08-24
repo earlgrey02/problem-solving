@@ -17,12 +17,12 @@ def bfs(v: tuple[int, int, int]) -> int:
             next_v = (v[0] + dy[i], v[1] + dx[i])
 
             if 0 <= next_v[0] < n and 0 <= next_v[1] < m:
-                if matrix[next_v[0]][next_v[1]] == 1 and v[2] == 0 and visited[next_v[0]][next_v[1]][1] == -1:
-                    visited[next_v[0]][next_v[1]][1] = visited[v[0]][v[1]][v[2]] + 1
-                    queue.append((*next_v, 1))
-                elif matrix[next_v[0]][next_v[1]] == 0 and visited[next_v[0]][next_v[1]][v[2]] == -1:
+                if matrix[next_v[0]][next_v[1]] == 0 and visited[next_v[0]][next_v[1]][v[2]] == -1:
                     visited[next_v[0]][next_v[1]][v[2]] = visited[v[0]][v[1]][v[2]] + 1
                     queue.append((*next_v, v[2]))
+                elif matrix[next_v[0]][next_v[1]] == 1 and v[2] == 0 and visited[next_v[0]][next_v[1]][1] == -1:
+                    visited[next_v[0]][next_v[1]][1] = visited[v[0]][v[1]][v[2]] + 1
+                    queue.append((*next_v, 1))
 
     return -1
 
