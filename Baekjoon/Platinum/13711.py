@@ -13,6 +13,6 @@ for i in range(n):
     if dp[-1] < sequence[i]:
         dp.append(sequence[i])
     else:
-        dp[index := bisect_left(dp, sequence[i])] = sequence[i]
+        dp[bisect_left(dp, sequence[i])] = sequence[i]
 
 print(len(dp))
