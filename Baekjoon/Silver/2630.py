@@ -16,7 +16,7 @@ def check_count(matrix: list[list[int]]):
 
 n = int(input())
 matrix = [list(map(int, input().split())) for _ in range(n)]
-counts = [0, 0]
+counts = [0 for _ in range(2)]
 
 check_count(matrix)
 

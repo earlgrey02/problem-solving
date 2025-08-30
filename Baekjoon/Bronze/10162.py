@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 t = int(input())
 times = [300, 60, 10]
-count = [0, 0, 0]
+count = [0 for _ in range(3)]
 
 for i in range(3):
     count[i] += t // times[i]
