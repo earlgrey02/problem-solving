@@ -10,9 +10,9 @@ for _ in range(n):
     operator, *operand = input().split()
 
     if operator == "push_front":
-        queue.appendleft(operand[0])
+        queue.appendleft(*operand)
     elif operator == "push_back":
-        queue.append(operand[0])
+        queue.append(*operand)
     elif operator == "pop_front":
         print(queue.popleft() if queue else -1)
     elif operator == "pop_back":
