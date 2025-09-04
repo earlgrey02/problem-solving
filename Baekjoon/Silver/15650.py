@@ -1,8 +1,8 @@
-from itertools import combinations
 import sys
+from itertools import combinations
 
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
 
-print(*(' '.join(map(str, case)) for case in sorted(combinations(range(1, n + 1), m))), sep = '\n')
+print(*(' '.join(case) for case in combinations(map(str, range(1, n + 1)), m)), sep = '\n')
