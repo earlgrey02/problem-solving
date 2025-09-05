@@ -1,14 +1,19 @@
-from math import sqrt, floor
 import sys
+from math import isqrt
 
 input = sys.stdin.readline
 
+def sieve_of_eratosthenes(n: int) -> list[bool]:
+    is_primes = [i > 1 for i in range(n + 1)]
+
+    for i in range(2, isqrt(n) + 1):
+        if is_primes[i]:
+            for j in range(i ** 2, n + 1, i):
+                is_primes[j] = False
+
+    return is_primes
+
 m, n = map(int, input().split())
-primes = [i > 1 for i in range(n + 1)]
+is_primes = sieve_of_eratosthenes(n)
 
-for i in range(2, floor(sqrt(n)) + 1):
-    if primes[i]:
-        for j in range(i * 2, n + 1, i):
-            primes[j] = False
-
-print(*(i for i in range(m, n + 1) if primes[i]), sep = '\n')
+print(*(i for i in range(m, n + 1) if is_primes[i]), sep = '\n')

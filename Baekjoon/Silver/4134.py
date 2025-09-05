@@ -1,19 +1,20 @@
 import sys
-from math import floor, sqrt
+from math import isqrt
 
 input = sys.stdin.readline
 
-def is_prime(n) -> bool:
+def is_prime(n: int) -> bool:
     if n <= 1:
         return False
 
-    for i in range(2, floor(sqrt(n)) + 1):
+    for i in range(2, isqrt(n) + 1):
         if n % i == 0:
             return False
 
     return True
 
 t = int(input())
+numbers = [int(input()) for _ in range(t)]
 
 for _ in range(t):
     n = int(input())

@@ -1,12 +1,12 @@
-from math import sqrt, floor
 import sys
+from math import isqrt
 
 input = sys.stdin.readline
 
 n, k = map(int, input().split())
 divisors = set()
 
-for i in range(1, floor(sqrt(n)) + 1):
+for i in range(1, isqrt(n) + 1):
     if n % i == 0:
         divisors.add(i)
         divisors.add(n // i)
