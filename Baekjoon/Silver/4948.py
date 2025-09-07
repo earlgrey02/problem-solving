@@ -20,4 +20,4 @@ while (n := int(input())) != 0:
 
 is_primes = sieve_of_eratosthenes(max(numbers) * 2 + 1)
 
-print(*(len(list(filter(lambda x: x, is_primes[i + 1:2 * i + 1]))) for i in numbers), sep = '\n')
+print(*(is_primes[i + 1:2 * i + 1].count(True) for i in numbers), sep = '\n')

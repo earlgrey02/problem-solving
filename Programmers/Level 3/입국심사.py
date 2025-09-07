@@ -1,4 +1,4 @@
-def solution(n, times):
+def solution(n: int, times: list[int]) -> int:
     start, end = 1, max(times) * n
 
     while start <= end:

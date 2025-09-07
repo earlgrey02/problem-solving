@@ -1,20 +1,13 @@
 import sys
-from functools import reduce
+from math import prod
 
 input = sys.stdin.readline
 
+def chinese_reminder_theorem(remainders: tuple[int, int, int], moduli: tuple[int, int, int]) -> int:
+    mod = prod(moduli)
+
+    return sum(i * (mod // j) * pow(mod // j, -1, j) for i, j in zip(remainders, moduli)) % mod
+
 e, s, m = map(int, input().split())
-today = [1, 1, 1]
-boundaries = (15, 28, 19)
-year = 1
 
-while today != [e, s, m]:
-    for i in range(3):
-        if today[i] < boundaries[i]:
-            today[i] += 1
-        else:
-            today[i] = 1
-
-    year += 1
-
-print(year)
+print(year if (year := chinese_reminder_theorem((e, s, m), (15, 28, 19))) > 0 else 7980)

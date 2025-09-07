@@ -12,4 +12,4 @@ for _ in range(n):
         for j in range(b, b + 10):
             matrix[j][i] = True
 
-print(len([True for i in range(101) for j in range(101) if matrix[i][j]]))
+print(sum(map(lambda x: x.count(True), matrix)))
