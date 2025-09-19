@@ -37,7 +37,6 @@ def swans_bfs(swans: deque[tuple[int, int]]) -> deque[tuple[int, int]]:
 
     return next_swans
 
-
 r, c = map(int, input().split())
 matrix = [list(input().strip()) for _ in range(r)]
 visited = [[False for _ in range(c)] for _ in range(r)]
