@@ -6,6 +6,6 @@ def solution(n: int, tops: list[int]) -> int:
         dp[i][0] = sum(dp[i - 1]) % 10007
         dp[i][1] = ((1 + tops[i]) * dp[i - 1][0] + (2 + tops[i]) * dp[i - 1][1]) % 10007
 
-    answer = sum(dp[n - 1]) % 10007
+    answer = sum(dp[-1]) % 10007
 
     return answer

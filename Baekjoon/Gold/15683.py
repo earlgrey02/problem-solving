@@ -1,5 +1,4 @@
 import sys
-from copy import deepcopy
 from math import inf
 
 input = sys.stdin.readline
@@ -28,7 +27,7 @@ def backtracking(matrix: list[list[int]], depth: int = 0):
         v = cameras[depth]
 
         for direction in directions[matrix[v[0]][v[1]]]:
-            monitored_matrix = deepcopy(matrix)
+            monitored_matrix = [row[:] for row in matrix]
             monitoring(monitored_matrix, v, direction)
             backtracking(monitored_matrix, depth + 1)
 

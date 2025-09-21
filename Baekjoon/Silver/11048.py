@@ -10,4 +10,4 @@ for i in range(1, n):
     for j in range(1, m):
         dp[i][j] = max(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + matrix[i][j]
 
-print(dp[n - 1][m - 1])
+print(dp[-1][-1])

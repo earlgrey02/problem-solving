@@ -1,6 +1,5 @@
 import sys
 from collections import deque
-from copy import deepcopy
 
 input = sys.stdin.readline
 
@@ -37,6 +36,6 @@ for _ in range(m):
 for i in range(n + 1):
     adjacencies[i].sort()
 
-dfs(v, deepcopy(visited))
+dfs(v, visited[:])
 print()
-bfs(v, deepcopy(visited))
+bfs(v, visited[:])

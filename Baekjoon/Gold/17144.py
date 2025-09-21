@@ -1,10 +1,9 @@
 import sys
-from copy import deepcopy
 
 input = sys.stdin.readline
 
 def spread_dusts(matrix: list[list[int]]) -> list[list[int]]:
-    spreaded_matrix = deepcopy(matrix)
+    spreaded_matrix = [row[:] for row in matrix]
     dusts = [(i, j) for i in range(r) for j in range(c) if matrix[i][j] > 0]
 
     for dust in dusts:

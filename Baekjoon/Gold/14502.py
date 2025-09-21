@@ -1,6 +1,5 @@
 import sys
 from collections import deque
-from copy import deepcopy
 from itertools import combinations
 
 input = sys.stdin.readline
@@ -27,17 +26,17 @@ dx = (0, 0, 1, -1)
 answer = 0
 
 for case in combinations(blanks, 3):
-    matrix_copy = deepcopy(matrix)
+    copied_matrix = [row[:] for row in matrix]
     visited = [[False for _ in range(m)] for _ in range(n)]
 
     for i, j in case:
-        matrix_copy[i][j] = 1
+        copied_matrix[i][j] = 1
 
     for i in range(n):
         for j in range(m):
             if matrix[i][j] == 2:
-                bfs((i, j), matrix_copy)
+                bfs((i, j), copied_matrix)
 
-    answer = max(sum(map(lambda x: x.count(0), matrix_copy)), answer)
+    answer = max(sum(map(lambda x: x.count(0), copied_matrix)), answer)
 
 print(answer)
