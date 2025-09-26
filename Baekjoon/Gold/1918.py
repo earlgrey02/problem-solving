@@ -3,7 +3,7 @@ import sys
 input = sys.stdin.readline
 
 expression = input().strip()
-result, operators = ([] for _ in range(2))
+result, operators = [], []
 
 for token in expression:
     if token.isalpha():
