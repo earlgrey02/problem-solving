@@ -1,8 +1,8 @@
 from collections import deque
 
 
-def solution(matrix: list[list[int]]) -> int:
-    def bfs(v: tuple[int, int]):
+def solution(matrix) -> int:
+    def bfs(v):
         queue = deque([v])
         visited[v[0]][v[1]] = 1
 
@@ -23,4 +23,6 @@ def solution(matrix: list[list[int]]) -> int:
 
     bfs((0, 0))
 
-    return visited[n - 1][m - 1]
+    answer = visited[-1][-1]
+
+    return answer

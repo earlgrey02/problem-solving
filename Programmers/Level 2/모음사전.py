@@ -1,7 +1,7 @@
 from itertools import product
 
 
-def solution(word: list[str]) -> int:
+def solution(word):
     words = []
 
     for i in range(5):

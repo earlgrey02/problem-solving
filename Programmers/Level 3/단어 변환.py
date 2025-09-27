@@ -1,8 +1,8 @@
 from collections import deque
 
 
-def solution(begin: str, target: str, words: list[str]) -> int:
-    def bfs(v: str) -> int:
+def solution(begin, target, words):
+    def bfs(v):
         queue = deque([v])
         visited[v] = 0
 

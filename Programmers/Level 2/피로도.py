@@ -1,7 +1,7 @@
 from itertools import permutations
 
 
-def solution(k: int, dungeons: list[list[int]]) -> int:
+def solution(k, dungeons):
     answer = 0
 
     for case in permutations(dungeons, len(dungeons)):

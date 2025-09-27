@@ -1,5 +1,5 @@
-def solution(m: int, n: int, puddles: list[list[int]]):
-    def dfs(v: tuple[int, int]) -> int:
+def solution(m, n, puddles):
+    def dfs(v):
         if v == (n - 1, m - 1):
             return 1
         elif dp[v[0]][v[1]] != -1:

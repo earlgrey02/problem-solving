@@ -1,5 +1,5 @@
-def solution(numbers: list[int], target: int) -> int:
-    def dfs(v: int, depth: int = 0):
+def solution(numbers, target):
+    def dfs(v, depth = 0):
         if depth == len(numbers):
             if v == target:
                 nonlocal answer

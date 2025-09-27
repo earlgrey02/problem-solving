@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 
-def solution(edges: list[list[int]]) -> list[int]:
+def solution(edges):
     degrees = defaultdict(lambda: [0, 0])
     answer = [0 for _ in range(4)]
 

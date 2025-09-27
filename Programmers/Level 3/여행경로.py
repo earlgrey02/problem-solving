@@ -1,8 +1,8 @@
 from collections import defaultdict
 
 
-def solution(tickets: list[list[str]]) -> list[str]:
-    def backtracking(path: list[str]):
+def solution(tickets):
+    def backtracking(path):
         nonlocal answer
 
         if len(path) == len(tickets) + 1 and not answer:

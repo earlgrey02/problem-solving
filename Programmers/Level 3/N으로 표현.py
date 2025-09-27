@@ -1,4 +1,4 @@
-def solution(n: int, number: int) -> int:
+def solution(n, number):
     dp = [set() for _ in range(8)]
     answer = -1
 

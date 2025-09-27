@@ -1,4 +1,4 @@
-def solution(n: int, tops: list[int]) -> int:
+def solution(n, tops):
     dp = [[0 for _ in range(2)] for _ in range(n)]
     dp[0] = [1, 2 + tops[0]]
 

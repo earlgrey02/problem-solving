@@ -1,4 +1,4 @@
-def solution(distance: int, rocks: list[int], n: int) -> int:
+def solution(distance, rocks, n):
     rocks.sort()
     rocks.append(distance)
     start, end = 1, distance

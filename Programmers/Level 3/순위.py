@@ -1,4 +1,4 @@
-def solution(n: int, results: list[list[int]]) -> int:
+def solution(n, results):
     def floyd_warshall():
         for k in range(n):
             for i in range(n):

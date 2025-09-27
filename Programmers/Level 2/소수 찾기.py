@@ -2,8 +2,8 @@ from itertools import permutations
 from math import isqrt
 
 
-def solution(numbers: str) -> int:
-    def sieve_of_eratosthenes(n: int) -> list[bool]:
+def solution(numbers):
+    def sieve_of_eratosthenes(n):
         is_primes = [i > 1 for i in range(n + 1)]
 
         for i in range(2, isqrt(n) + 1):

@@ -1,4 +1,4 @@
-def solution(string: str) -> bool:
+def solution(string):
     stack = []
 
     for parenthesis in string:

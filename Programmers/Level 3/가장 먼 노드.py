@@ -1,7 +1,7 @@
 from collections import deque
 
 
-def solution(n: int, edges: list[list[int]]) -> int:
+def solution(n, edges):
     def bfs(v):
         queue = deque([v])
         visited[v] = 1

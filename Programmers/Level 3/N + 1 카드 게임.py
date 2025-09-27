@@ -1,19 +1,19 @@
-def solution(coin: int, cards: list[int]) -> int:
-    def check_cards(cards_1: list[int], cards_2: list[int]) -> bool:
-        for i in cards_1:
-            for j in cards_2:
+def solution(coin, cards) -> int:
+    def check_cards(*cards):
+        for i in cards[0]:
+            for j in cards[1]:
                 if i + j == n + 1:
-                    cards_1.remove(i)
-                    cards_2.remove(j)
+                    cards[0].remove(i)
+                    cards[1].remove(j)
 
                     return True
 
         return False
 
     n = len(cards)
-    round = 1
     hand_cards = [cards.pop(0) for _ in range(n // 3)]
     saved_cards = []
+    answer = 1
 
     while coin >= 0 and cards:
         saved_cards.extend(cards.pop(0) for _ in range(2))
@@ -27,8 +27,6 @@ def solution(coin: int, cards: list[int]) -> int:
         else:
             break
 
-        round += 1
-
-    answer = round
+        answer += 1
 
     return answer

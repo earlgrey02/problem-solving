@@ -1,4 +1,4 @@
-def solution(triangle: list[list[int]]) -> int:
+def solution(triangle):
     n = len(triangle)
     dp = [row[:] for row in triangle]
 

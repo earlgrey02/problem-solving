@@ -3,7 +3,7 @@ from collections import defaultdict
 from itertools import combinations, product
 
 
-def solution(dices: list[list[int]]) -> tuple[int, int]:
+def solution(dices):
     n = len(dices)
     summations = defaultdict(list)
     max_win = 0

@@ -2,8 +2,8 @@ from collections import Counter
 from math import inf
 
 
-def solution(n: int, wires: list[list[int]]) -> int | float:
-    def union(v1: int, v2: int):
+def solution(n, wires):
+    def union(v1, v2):
         v1, v2 = find(v1), find(v2)
 
         if v1 != v2:
@@ -15,7 +15,7 @@ def solution(n: int, wires: list[list[int]]) -> int | float:
             else:
                 parents[v2] = v1
 
-    def find(v: int) -> int:
+    def find(v):
         if parents[v] != v:
             parents[v] = find(parents[v])
 
