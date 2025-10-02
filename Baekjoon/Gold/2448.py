@@ -3,20 +3,17 @@ import sys
 input = sys.stdin.readline
 
 def draw_stars(n: int) -> list[str]:
-    if n == 1:
-        stars = ['*']
+    if n == 3:
+        stars =  ["  *  ", " * * ", "*****"]
     else:
-        before_stars = draw_stars(n // 3)
+        before_stars = draw_stars(n // 2)
         stars = []
 
         for star in before_stars:
-            stars.append(star * 3)
+            stars.append(' ' * (n // 2) + star + ' ' * (n // 2))
 
         for star in before_stars:
-            stars.append(star + ' ' * (n // 3) + star)
-
-        for star in before_stars:
-            stars.append(star * 3)
+            stars.append(star + ' ' + star)
 
     return stars
 

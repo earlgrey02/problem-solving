@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-sys.setrecursionlimit(10 ** 9)
+sys.setrecursionlimit(10 ** 6)
 
 def dfs(v: tuple[int, int]) -> int:
     if v == (m - 1, n - 1):

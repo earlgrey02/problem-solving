@@ -12,11 +12,11 @@ def recursion(string: str, start: int, end: int) -> int:
     else:
         return recursion(string, start + 1, end - 1)
 
-def isPalindrome(string: str) -> int:
+def is_palindrome(string: str) -> int:
     return recursion(string, 0, len(string) - 1)
 
 t = int(input())
 strings = [input().strip() for _ in range(t)]
 counts = {string: 0 for string in strings}
 
-print(*(f"{isPalindrome(string)} {counts[string]}" for string in strings), sep = '\n')
+print(*(f"{is_palindrome(string)} {counts[string]}" for string in strings), sep = '\n')
