@@ -51,7 +51,6 @@ def slice(matrix: list[list[int]], d: int):
                         p -= 1
                     else:
                         matrix[p := p - 1][j] = temp
-
     elif d == 3:
         for i in range(n):
             p = 0

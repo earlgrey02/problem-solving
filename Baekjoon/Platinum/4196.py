@@ -46,16 +46,16 @@ for _ in range(t):
         if labels[i] == -1:
             tarjan(i)
 
-    indegrees = [0 for _ in range(len(sccs))]
-    indexes = [-1 for _ in range(n + 1)]
+    scc_indegrees = [0 for _ in range(len(sccs))]
+    scc_indexes = [-1 for _ in range(n + 1)]
 
     for i, scc in enumerate(sccs):
         for v in scc:
-            indexes[v] = i
+            scc_indexes[v] = i
 
     for v in range(1, n + 1):
         for next_v in adjacencies[v]:
-            if indexes[v] != indexes[next_v]:
-                indegrees[indexes[next_v]] += 1
+            if scc_indexes[v] != scc_indexes[next_v]:
+                scc_indegrees[scc_indexes[next_v]] += 1
 
-    print(indegrees.count(0))
+    print(scc_indegrees.count(0))
