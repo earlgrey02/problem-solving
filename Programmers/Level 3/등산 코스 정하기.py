@@ -3,7 +3,7 @@ from math import inf
 
 
 def solution(n, paths, gates, summits):
-    def dijkstra(gates):
+    def dijkstra():
         heap = [(0, gate) for gate in gates]
 
         while heap:
@@ -30,7 +30,7 @@ def solution(n, paths, gates, summits):
     for gate in gates:
         intensities[gate] = 0
 
-    dijkstra(gates)
+    dijkstra()
 
     answer = min(((summit, intensities[summit]) for summit in sorted(summits)), key = lambda x: x[1])
 
