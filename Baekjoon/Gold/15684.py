@@ -16,7 +16,7 @@ def check() -> int:
 
     return matched_count
 
-def backtracking(v: tuple[int, int], depth: int = 0):
+def backtracking(v: tuple[int, int], depth: int):
     global count
 
     if (n - (matched_count := check())) > (count - depth - 1) * 2:
@@ -42,6 +42,6 @@ for _ in range(m):
     adjacencies[a][b] = 1
     adjacencies[a][b + 1] = -1
 
-backtracking((1, 1))
+backtracking((1, 1), 0)
 
 print(count if count < 4 else -1)

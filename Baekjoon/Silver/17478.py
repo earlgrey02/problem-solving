@@ -2,7 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
-def chat(depth: int = 0):
+def chat(depth: int):
     if depth == 0:
         print("어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.")
 
@@ -23,4 +23,4 @@ def chat(depth: int = 0):
 
 n = int(input())
 
-chat()
+chat(0)

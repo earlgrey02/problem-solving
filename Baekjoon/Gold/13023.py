@@ -2,7 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
-def backtracking(v: int, depth: int = 0):
+def backtracking(v: int, depth: int):
     global is_present
 
     if depth == 4:
@@ -26,7 +26,7 @@ for _ in range(m):
 
 for i in range(n):
     visited[i] = True
-    backtracking(i)
+    backtracking(i, 0)
     visited[i] = False
 
     if is_present:

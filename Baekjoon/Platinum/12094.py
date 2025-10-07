@@ -68,7 +68,7 @@ def slice(matrix: list[list[int]], d: int):
                     else:
                         matrix[i][p := p + 1] = temp
 
-def backtracking(matrix: list[list[int]], depth: int = 0):
+def backtracking(matrix: list[list[int]], depth: int):
     global max_value
 
     max_value = max(max_value, value := max(map(max, matrix)))
@@ -84,6 +84,6 @@ n = int(input())
 matrix = [list(map(int, input().split())) for _ in range(n)]
 max_value = 0
 
-backtracking(matrix)
+backtracking(matrix, 0)
 
 print(max_value)

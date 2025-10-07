@@ -17,22 +17,22 @@ def topological_sort():
             if indegrees[next_v] == 0:
                 queue.append(next_v)
 
-t = int(input())
+n = int(input())
+adjacencies = [[] for _ in range(n)]
+indegrees = [0 for _ in range(n)]
+times = [0 for _ in range(n)]
 
-for _ in range(t):
-    n, k = map(int, input().split())
-    times = list(map(int, input().split()))
-    adjacencies = [[] for _ in range(n)]
-    indegrees = [0 for _ in range(n)]
+for end in range(n):
+    time, *starts = filter(lambda x: x > 0, map(int, input().split()))
 
-    for _ in range(k):
-        start, end = map(lambda x: int(x) - 1, input().split())
+    for start in map(lambda x: x - 1, starts):
         adjacencies[start].append(end)
         indegrees[end] += 1
 
-    w = int(input())
-    dp = [-inf if indegrees[i] > 0 else times[i] for i in range(n)]
+    times[end] = time
 
-    topological_sort()
+dp = [-inf if indegrees[i] > 0 else times[i] for i in range(n)]
 
-    print(dp[w - 1])
+topological_sort()
+
+print(max(dp))

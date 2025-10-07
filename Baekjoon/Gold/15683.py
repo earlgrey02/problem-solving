@@ -18,7 +18,7 @@ def monitoring(matrix: list[list[int]], camera: tuple[int, int], direction: tupl
 
             v = next_v
 
-def backtracking(matrix: list[list[int]], depth: int = 0):
+def backtracking(matrix: list[list[int]], depth: int):
     global count
 
     if depth == len(cameras):
@@ -45,6 +45,6 @@ directions = {
 dy = (1, -1, 0, 0)
 dx = (0, 0, 1, -1)
 
-backtracking(matrix)
+backtracking(matrix, 0)
 
 print(count)
