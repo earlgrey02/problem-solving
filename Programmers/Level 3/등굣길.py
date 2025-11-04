@@ -17,7 +17,7 @@ def solution(m, n, puddles):
 
     dp = [[-1 for _ in range(m)] for _ in range(n)]
     puddles = {tuple(map(lambda x: x - 1, puddle[::-1])) for puddle in puddles}
-    mod = 1_000_000_007
+    mod = int(1e9) + 7
     dy = (1, 0)
     dx = (0, 1)
 

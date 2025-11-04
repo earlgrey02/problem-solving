@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 n = int(input())
 dp = [[[0 for _ in range(1 << 10)] for _ in range(10)] for _ in range(n + 1)]
-mod = 10 ** 9
+mod = int(1e9)
 
 for j in range(1, 10):
     dp[1][j][1 << j] = 1

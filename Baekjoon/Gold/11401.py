@@ -3,14 +3,14 @@ import sys
 input = sys.stdin.readline
 
 n, k = map(int, input().split())
-p = int(1e9 + 7)
+mod = int(1e9) + 7
 
-def factorial(x: int) -> int:
+def factorial(n: int) -> int:
     result = 1
 
-    for i in range(2, x + 1):
-        result = (result * i) % p
+    for i in range(2, n + 1):
+        result = (result * i) % mod
 
     return result
 
-print((factorial(n) * pow(factorial(n - k) * factorial(k), p - 2, p)) % p)
+print((factorial(n) * pow(factorial(n - k) * factorial(k), mod - 2, mod)) % mod)

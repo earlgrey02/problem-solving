@@ -29,8 +29,12 @@ def pow(a: list[list[int]], n: int) -> list[list[int]]:
         else:
             return multiply(a, multiply(b, b))
 
-n, b = map(int, input().split())
-matrix = [list(map(int, input().split())) for _ in range(n)]
-mod = int(1e3)
+def fibonacci(n: int) -> int:
+    matrix = [[1, 1], [1, 0]]
 
-print(*(' '.join(map(str, row)) for row in pow(matrix, b)), sep = '\n')
+    return pow(matrix, n)[0][1]
+
+n = int(input())
+mod = int(1e6)
+
+print(fibonacci(n))

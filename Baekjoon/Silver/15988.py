@@ -6,7 +6,7 @@ t = int(input())
 numbers = [int(input()) for _ in range(t)]
 n = max(numbers)
 dp = [0 for _ in range(n + 1)]
-mod = 1_000_000_009
+mod = int(1e9) + 9
 
 dp[1] = 1
 if n >= 2:
