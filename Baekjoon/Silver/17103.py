@@ -17,4 +17,4 @@ t = int(input())
 numbers = [int(input()) for _ in range(t)]
 is_primes = sieve_of_eratosthenes(max(numbers))
 
-print(*(len([True for j in range(floor(i / 2) + 1) if is_primes[j] and is_primes[i - j]]) for i in numbers), sep = '\n')
+print(*(sum(1 for j in range(floor(i / 2) + 1) if is_primes[j] and is_primes[i - j]) for i in numbers), sep = '\n')

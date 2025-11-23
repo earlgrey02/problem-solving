@@ -1,5 +1,6 @@
 from math import isqrt
 
+
 def solution(n, k):
     def format(n, k):
         formatted_n = []
@@ -21,6 +22,6 @@ def solution(n, k):
         return True
 
     numbers = [int(digit) for digit in format(n, k).split('0') if digit]
-    answer = len([number for number in numbers if is_prime(number)])
+    answer = sum(1 for number in numbers if is_prime(number))
 
     return answer

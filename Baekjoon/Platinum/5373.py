@@ -29,7 +29,7 @@ for _ in range(t):
                     cube['D'][i][::-1],
                     [cube['R'][j][i] for j in range(3)]
                 ])
-                lines.rotate(1)
+                lines.rotate()
 
                 for j in range(3):
                     cube['U'][2 - i][j], cube['L'][j][2 - i], cube['D'][i][j], cube['R'][j][i] = (lines[k][j] for k in range(4))
@@ -40,7 +40,7 @@ for _ in range(t):
                     cube['D'][i],
                     [cube['L'][j][2 - i] for j in range(3)][::-1]
                 ])
-                lines.rotate(1)
+                lines.rotate()
 
                 for j in range(3):
                     cube['U'][2 - i][j], cube['R'][j][i], cube['D'][i][j], cube['L'][j][2 - i] = [lines[k][j] for k in range(4)]
@@ -54,7 +54,7 @@ for _ in range(t):
                     [cube['D'][j][i] for j in range(3)],
                     [cube['F'][j][i] for j in range(3)],
                 ])
-                lines.rotate(1)
+                lines.rotate()
 
                 for j in range(3):
                     cube['U'][j][i], cube['B'][j][2 - i], cube['D'][j][i], cube['F'][j][i] = [lines[k][j] for k in range(4)]
@@ -65,7 +65,7 @@ for _ in range(t):
                     [cube['D'][j][i] for j in range(3)][::-1],
                     [cube['B'][j][2 - i] for j in range(3)][::-1]
                 ])
-                lines.rotate(1)
+                lines.rotate()
 
                 for j in range(3):
                     cube['U'][j][i], cube['F'][j][i], cube['D'][j][i], cube['B'][j][2 - i] = [lines[k][j] for k in range(4)]

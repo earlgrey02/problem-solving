@@ -8,5 +8,5 @@ chars = sorted(input().split())
 vowels = set(('a', 'e', 'i', 'o', 'u'))
 
 for password in combinations(chars, l):
-    if (vowel_count := len([1 for i in password if i in vowels])) >= 1 and l - vowel_count >= 2:
+    if (vowel_count := sum(1 for i in password if i in vowels)) >= 1 and l - vowel_count >= 2:
         print(''.join(password))

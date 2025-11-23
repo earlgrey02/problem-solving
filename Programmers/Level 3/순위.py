@@ -16,6 +16,6 @@ def solution(n, results):
 
     floyd_warshall()
 
-    answer = len([True for row in adjacencies if row.count(0) == 1])
+    answer = sum(1 for row in adjacencies if row.count(0) == 1)
 
     return answer

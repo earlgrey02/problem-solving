@@ -28,4 +28,4 @@ for _ in range(m):
     v1, v2 = map(int, input().split())
     union(v1, v2)
 
-print(len([i for i in range(2, n + 1) if find(i) == find(1)]))
+print(sum(i for i in range(2, n + 1) if find(i) == find(1)))

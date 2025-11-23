@@ -17,4 +17,4 @@ _ = int(input())
 numbers = list(map(int, input().split()))
 is_primes = sieve_of_eratosthenes(max(numbers))
 
-print(len([True for i in numbers if is_primes[i]]))
+print(sum(1 for i in numbers if is_primes[i]))
