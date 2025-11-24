@@ -7,9 +7,9 @@ word = input().strip()
 time = 0
 
 for letter in word:
-    for index, string in enumerate(array):
+    for i, string in enumerate(array):
         if letter in string:
-            time += index + 3
+            time += i + 3
             break
 
 print(time)
