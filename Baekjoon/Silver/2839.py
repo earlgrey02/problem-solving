@@ -11,4 +11,4 @@ for i in range(6, n + 1):
     elif dp[i - 3] != -1 or dp[i - 5] != -1:
         dp[i] = max(dp[i - 3], dp[i - 5]) + 1
 
-print(dp[n])
+print(dp[-1])

@@ -7,8 +7,8 @@ coins = [int(input()) for _ in range(n)]
 dp = [0 for i in range(k + 1)]
 dp[0] = 1
 
-for i in coins:
-    for j in range(i, k + 1):
-        dp[j] += dp[j - i]
+for coin in coins:
+    for i in range(coin, k + 1):
+        dp[i] += dp[i - coin]
 
-print(dp[k])
+print(dp[-1])

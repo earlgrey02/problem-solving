@@ -4,7 +4,7 @@ from bisect import bisect_left
 input = sys.stdin.readline
 
 n = int(input())
-lines = list(map(lambda x: x[1], sorted((tuple(map(int, input().split())) for _ in range(n)), key = lambda x: x[0])))
+lines = list(map(int, input().split()))
 dp = [lines[0]]
 
 for i in range(n):

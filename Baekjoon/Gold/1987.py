@@ -20,7 +20,7 @@ def dfs(v: tuple[int, int], visited: int) -> int:
 
 r, c = map(int, input().split())
 matrix = [list(input().strip()) for _ in range(r)]
-dp = [[dict() for _ in range(c)] for _ in range(r)]
+dp = [[{} for _ in range(c)] for _ in range(r)]
 visited = 1 << (ord(matrix[0][0]) - ord('A'))
 answer = 0
 dy = (1, -1, 0, 0)

@@ -8,8 +8,8 @@ coins = [int(input()) for _ in range(n)]
 dp = [inf for _ in range(k + 1)]
 dp[0] = 0
 
-for i in coins:
-    for j in range(i, k + 1):
-        dp[j] = min(dp[j], dp[j - i] + 1)
+for coin in coins:
+    for i in range(coin, k + 1):
+        dp[i] = min(dp[i], dp[i - coin] + 1)
 
-print(dp[k] if dp[k] != inf else -1)
+print(dp[-1] if dp[-1] != inf else -1)

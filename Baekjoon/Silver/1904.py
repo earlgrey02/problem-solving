@@ -14,4 +14,4 @@ if n >= 1:
 for i in range(3, n + 1):
     dp[i] = sum(dp[i - 2:i]) % 15746
 
-print(dp[n])
+print(dp[-1])

@@ -11,6 +11,6 @@ def solution(triangle):
             else:
                 dp[i][j] += max(dp[i - 1][j - 1:j + 1])
 
-    answer = max(dp[-1])
+    answer = max(dp[n - 1])
 
     return answer
