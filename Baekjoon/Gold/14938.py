@@ -9,13 +9,15 @@ def floyd_warshall():
             for j in range(n):
                 distances[i][j] = min(distances[i][j], distances[i][k] + distances[k][j])
 
-n, m = [int(input()) for _ in range(2)]
+n, m, r = map(int, input().split())
+items = list(map(int, input().split()))
 distances = [[inf if i != j else 0 for j in range(n)] for i in range(n)]
 
-for _ in range(m):
-    start, end, w = map(int, input().split())
-    distances[start - 1][end - 1] = min(distances[start - 1][end - 1], w)
+for _ in range(r):
+    v1, v2, w = map(int, input().split())
+    distances[v1 - 1][v2 - 1] = w
+    distances[v2 - 1][v1 - 1] = w
 
 floyd_warshall()
 
-print(*(' '.join(map(str, (i if i != inf else 0 for i in row))) for row in distances), sep = '\n')
+print(max(sum(items[j] for j in range(n) if distances[i][j] <= m) for i in range(n)))
