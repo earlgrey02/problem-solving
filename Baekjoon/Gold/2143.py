@@ -4,8 +4,7 @@ from itertools import accumulate
 
 input = sys.stdin.readline
 
-t = int(input())
-n = int(input())
+t, n = (int(input()) for _ in range(2))
 sequences = []
 sequences.append(list(map(int, input().split())))
 m = int(input())

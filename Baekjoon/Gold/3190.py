@@ -3,8 +3,7 @@ from collections import deque
 
 input = sys.stdin.readline
 
-n = int(input())
-k = int(input())
+n, k = (int(input()) for _ in range(2))
 apples = [tuple(map(lambda x: int(x) - 1, input().split())) for _ in range(k)]
 l = int(input())
 actions = [tuple(map(lambda x: int(x) if x.isdigit() else x, input().split())) for _ in range(l)]

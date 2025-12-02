@@ -2,8 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
-n = int(input())
-m = int(input())
+n, m = (int(input()) for _ in range(2))
 broken_buttons = set(map(int, input().split()))
 working_buttons = {i for i in range(10) if i not in broken_buttons}
 count = abs(n - 100)
