@@ -7,7 +7,7 @@ def stack_up(tanks: list[list[int]], order: int):
         result = [tanks.pop(0)]
 
         while len(tanks) >= len(result[0]):
-            result = [tanks.pop(0) + i for i in list(map(list, zip(*result[::-1])))]
+            result = [tanks.pop(0) + i for i in map(list, zip(*result[::-1]))]
 
         tanks[:0] = result
     elif order == 1:

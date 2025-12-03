@@ -28,7 +28,7 @@ def boom(groups: list[list[tuple[int, int]]]):
 
     for i in range(6):
         puyos = [matrix[j][i] for j in range(12) if matrix[j][i] != '.']
-        puyos = ['.' for _ in range(12 - len(puyos))] + puyos
+        puyos[:0] = ['.' for _ in range(12 - len(puyos))]
 
         for j in range(12):
             matrix[j][i] = puyos[j]
