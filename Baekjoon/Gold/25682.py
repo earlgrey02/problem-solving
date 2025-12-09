@@ -15,6 +15,6 @@ for i in range(1, n + 1):
 
 for i in range(n - k + 1):
     for j in range(m - k + 1):
-        answer = min(answer, (total := prefix_sum[i + k][j + k] - prefix_sum[i][j + k] - prefix_sum[i + k][j] + prefix_sum[i][j]), k * k - total)
+        answer = min(answer, (total := prefix_sum[i + k][j + k] - prefix_sum[i][j + k] - prefix_sum[i + k][j] + prefix_sum[i][j]), k ** 2 - total)
 
 print(answer)
