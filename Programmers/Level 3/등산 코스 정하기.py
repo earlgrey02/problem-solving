@@ -13,7 +13,7 @@ def solution(n, paths, gates, summits):
                 continue
 
             for next_v, next_w in adjacencies[v]:
-                next_w = max(intensities[v], next_w)
+                next_w = max(next_w, intensities[v])
 
                 if next_w < intensities[next_v]:
                     intensities[next_v] = next_w

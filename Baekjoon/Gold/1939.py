@@ -21,18 +21,19 @@ def find(v: int) -> int:
     return parents[v]
 
 def kruskal() -> int:
-    distance = 0
-
     for v1, v2, w in edges:
         if find(v1) != find(v2):
-            distance += w
             union(v1, v2)
 
-    return distance
+        if find(start) == find(destination):
+            return w
 
-v, e = map(int, input().split())
-edges = sorted((tuple(map(int, input().split())) for _ in range(e)), key = lambda x: x[2])
-parents = [i for i in range(v + 1)]
-ranks = [0 for _ in range(v + 1)]
+    return 0
+
+n, m = map(int, input().split())
+edges = sorted(((v1 - 1, v2 - 1, w) for _ in range(m) for v1, v2, w in (map(int, input().split()),)), key = lambda x: -x[2])
+start, destination = map(lambda x: int(x) - 1, input().split())
+parents = [i for i in range(n)]
+ranks = [0 for _ in range(n)]
 
 print(kruskal())
