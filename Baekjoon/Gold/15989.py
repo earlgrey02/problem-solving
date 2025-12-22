@@ -6,14 +6,10 @@ t = int(input())
 queries = [int(input()) for _ in range(t)]
 n = max(queries)
 dp = [0 for _ in range(n + 1)]
+dp[0] = 1
 
-dp[1] = 1
-if n >= 2:
-    dp[2] = 2
-if n >= 3:
-    dp[3] = 4
-
-for i in range(4, n + 1):
-    dp[i] = sum(dp[i - 3:i])
+for i in (1, 2, 3):
+    for j in range(i, n + 1):
+        dp[j] += dp[j - i]
 
 print(*(dp[i] for i in queries), sep = '\n')

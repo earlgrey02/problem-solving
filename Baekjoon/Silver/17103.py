@@ -14,7 +14,8 @@ def sieve_of_eratosthenes(n: int) -> list[bool]:
     return is_primes
 
 t = int(input())
-numbers = [int(input()) for _ in range(t)]
-is_primes = sieve_of_eratosthenes(max(numbers))
+queries = [int(input()) for _ in range(t)]
+n = max(queries)
+is_primes = sieve_of_eratosthenes(n)
 
-print(*(sum(1 for j in range(floor(i / 2) + 1) if is_primes[j] and is_primes[i - j]) for i in numbers), sep = '\n')
+print(*(sum(1 for j in range(floor(i / 2) + 1) if is_primes[j] and is_primes[i - j]) for i in queries), sep = '\n')
