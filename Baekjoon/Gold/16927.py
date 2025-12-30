@@ -4,44 +4,41 @@ input = sys.stdin.readline
 
 n, m, r = map(int, input().split())
 matrix = [list(map(int, input().split())) for _ in range(n)]
-layers = []
 
 for i in range(min(n, m) // 2):
     layer = []
+    top, right, bottom, left = i, m - 1 - i, n - 1 - i, i
 
-    for j in range(i, m - i):
-        layer.append(matrix[i][j])
+    for j in range(left, right + 1):
+        layer.append(matrix[top][j])
 
-    for j in range(i + 1, n - i):
-        layer.append(matrix[j][m - i - 1])
+    for j in range(top + 1, bottom):
+        layer.append(matrix[j][right])
 
-    for j in range(m - i - 2, i - 1, -1):
-        layer.append(matrix[n - i - 1][j])
+    for j in range(right, left - 1, -1):
+        layer.append(matrix[bottom][j])
 
-    for j in range(n - i - 2, i, -1):
-        layer.append(matrix[j][i])
+    for j in range(bottom - 1, top, -1):
+        layer.append(matrix[j][left])
 
     mid = r % len(layer)
-    layers.append(layer[mid:] + layer[:mid])
-
-for i in range(len(layers)):
-    layer = layers[i]
+    layer = layer[mid:] + layer[:mid]
     index = 0
 
-    for j in range(i, m - i):
-        matrix[i][j] = layer[index]
+    for j in range(left, right + 1):
+        matrix[top][j] = layer[index]
         index += 1
 
-    for j in range(i + 1, n - i):
-        matrix[j][m - i - 1] = layer[index]
+    for j in range(top + 1, bottom):
+        matrix[j][right] = layer[index]
         index += 1
 
-    for j in range(m - i - 2, i - 1, -1):
-        matrix[n - i - 1][j] = layer[index]
+    for j in range(right, left - 1, -1):
+        matrix[bottom][j] = layer[index]
         index += 1
 
-    for j in range(n - i - 2, i, -1):
-        matrix[j][i] = layer[index]
+    for j in range(bottom - 1, top, -1):
+        matrix[j][left] = layer[index]
         index += 1
 
 for row in matrix:
